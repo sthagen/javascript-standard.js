@@ -7,17 +7,22 @@
 </h1>
 
 <p align="center">
-    <a href="https://discord.gg/ZegqCBr"><img src="https://img.shields.io/discord/612704110008991783" alt="discord"></a>
+  <a href="https://discord.gg/ZegqCBr"><img src="https://img.shields.io/discord/612704110008991783" alt="discord"></a>
   <a href="https://travis-ci.org/standard/standard"><img src="https://img.shields.io/travis/standard/standard/master.svg" alt="travis"></a>
   <a href="https://www.npmjs.com/package/standard"><img src="https://img.shields.io/npm/v/standard.svg" alt="npm version"></a>
   <a href="https://www.npmjs.com/package/eslint-config-standard"><img src="https://img.shields.io/npm/dm/eslint-config-standard.svg" alt="npm downloads"></a>
   <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
 </p>
 
+<h5 align="center">
+</h5>
+<br>
+
 <p align="center">
   <a href="/docs/README-en.md">English</a> •
   <a href="/docs/README-esla.md">Español (Latinoamérica)</a> •
   <a href="/docs/README-fr.md">Français</a> •
+  <a href="/docs/README-id.md">Bahasa Indonesia</a> •
   <a href="/docs/README-iteu.md">Italiano (Italian)</a> •
   <a href="/docs/README-ja.md">日本語 (Japanese)</a> •
   <a href="/docs/README-kokr.md">한국어 (Korean)</a> •
@@ -36,9 +41,6 @@
 
 今すぐ`npx standard --fix`を実行して、試してみましょう！
 
-### オープンソースサポーター
-
-[Become a supporter!](https://feross.org/thanks/)
 
 ## 目次
 
@@ -189,7 +191,7 @@ ESLint"](https://www.youtube.com/watch?v=kuHfMw8j4xk)をご覧ください。こ
 |---|---|---|---|
 
 
-| Your logo here | Your logo here | Your logo here | Your logo here |
+| [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/jublia.png>](https://jublia.com/) | Your logo here | Your logo here | Your logo here |
 |---|---|---|---|
 
 

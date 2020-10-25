@@ -5,7 +5,57 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased][unreleased]
+## [15.0.0] - 2020-10-21
+
+We're super excited to announce `standard` 15!
+
+As with every new major release, there are lots of new rules in 15.0.0 designed
+to help catch bugs and make programmer intent more explicit. This release brings
+support for ES 2021, the latest version of the ECMAScript specification, as well
+as many quality-of-life improvements, including ESLint v7.
+
+When you upgrade, consider running `standard --fix` to automatically format your
+code to match the newly added rules.
+
+❤️ If you enjoy StandardJS and want to support future releases, check out
+Feross's [GitHub Sponsors page](https://github.com/users/feross/sponsorship).
+
+### New features
+
+- Support ES 2021, the latest version of the ECMAScript specification, which includes support for [logical assignment operators](https://github.com/tc39/proposal-logical-assignment) and [numeric separators](https://github.com/tc39/proposal-numeric-separator) [#1551](https://github.com/standard/standard/issues/1551)
+- Support ES 2020 features such as [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining), the [nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator), `export * as ns from 'source'`, and [`import.meta`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import.meta).
+- Support global variables from ES 2017 (`Atomics`, `SharedArrayBuffer`), ES 2020 (`BigInt`, `BigInt64Array`, `BigUint64Array`, `globalThis`), and ES 2021 (`FinalizationRegistry`, `WeakRef`). [#1436](https://github.com/standard/standard/issues/1436) [#1557](https://github.com/standard/standard/issues/1557) [eslint-config-standard/#156](https://github.com/standard/eslint-config-standard/pull/156)
+- The documentation is now available in Indonesian 🇮🇩! [#1544](https://github.com/standard/standard/pull/1544)
+  - Thanks to [@yoga1234](https://github.com/yoga1234) for the excellent work!
+  - Other community contributed translations exist in Spanish, French, Italian, Japanese, Korean, Portuguese, Simplified Chinese, and Taiwanese Mandarin.
+  - More translations are always welcome!
+
+### Changed features
+
+- BREAKING: Node.js 8 is no longer supported
+  - Node.js 8 is EOL and will no longer be receiving security updates.
+  - To prevent breaking CI for projects which still support Node 8, `standard` silently passes when run by an unsupported version of Node
+- Update `eslint` from `~6.8.0` to `~7.11.0`
+
+### New rules
+
+_(Estimated % of affected standard users, based on test suite in parens)_
+
+- Require indentation for values of ternary expressions ([indent](https://eslint.org/docs/rules/indent)) [#927](https://github.com/standard/standard/issues/927) [4%]
+- Enforce newlines between operands of ternary expressions if the expression spans multiple lines ([multiline-ternary](https://eslint.org/docs/rules/multiline-ternary)) [#1558](https://github.com/standard/standard/issues/1558) [3%]
+- Disallow loops with a body that allows only one iteration ([no-unreachable-loop](https://eslint.org/docs/rules/no-unreachable-loop)) [#1556](https://github.com/standard/standard/issues/1556) [0%]
+- Disallow useless backreferences in regular expressions ([no-useless-backreference](https://eslint.org/docs/rules/no-useless-backreference)) [#1554](https://github.com/standard/standard/issues/1554) [0%]
+- Enforce default clauses in switch statements to be last ([default-case-last](https://eslint.org/docs/rules/default-case-last)) [#1553](https://github.com/standard/standard/issues/1553) [0%]
+- Disallow Number Literals That Lose Precision ([no-loss-of-precision](https://eslint.org/docs/rules/no-loss-of-precision)) [#1552](https://github.com/standard/standard/issues/1552) [0%]
+
+### Changed rules
+
+- Relax rule: Allow function declarations in nested blocks [#1406](https://github.com/standard/standard/issues/1406)
+- Relax rule: Removed redundant `no-negated-in-lhs` rule, already enforced by `no-unsafe-negation` [eslint-config-standard/#160](https://github.com/standard/eslint-config-standard/pull/160)
+
+## [14.3.4] - 2020-05-11
+
+- Relax rule: `no-return-await` [#1442](https://github.com/standard/standard/pull/1442)
 
 ## [14.3.3] - 2020-03-15
 
@@ -147,23 +197,18 @@ When you upgrade, consider running `standard --fix` to automatically format your
 ### New features
 
 - Update `eslint` from `~5.16.0` to `~6.0.1`
-
   - BREAKING: Node.js 6 is no longer supported
     - Node.js 6 is EOL and will no longer be receiving security updates. As a result, the eslint team has decided to drop support for it.
     - To prevent breaking CI for projects which still support Node 6, `standard` silently passes when run by an unsupported version of Node.
-
   - **For `eslint-config-standard` users only:** Plugins are no longer affected by `eslint`'s location
     - Previously, ESLint loaded plugins relative to the location of the ESLint package itself. As a result, we suggested that users with global ESLint installations should also install plugins globally, and users with local ESLint installations should install plugins locally.
     - With ESLint v6, plugins should always be installed locally, even if ESLint was installed globally. More precisely, ESLint v6 resolves plugins relative to the end user’s project by default, and always resolves shareable configs and parsers relative to the location of the config file that imports them.
     - See [migrating to ESLint 6.0.0 for more information](https://eslint.org/docs/user-guide/migrating-to-6.0.0#-plugins-and-shareable-configs-are-no-longer-affected-by-eslints-location).
-
 - The documentation is now available in Japanese 🇯🇵!
-  - Thanks to [@Munieru](https://github.com/munierujp) for the excellent work!
+  - Thanks to [@munierujp](https://github.com/munierujp) for the excellent work!
   - Other community contributed translations exist in Spanish, French, Italian, Korean, Portuguese, Simplified Chinese, and Taiwanese Mandarin.
   - More translations are always welcome!
-
 - Update `eslint-plugin-promise` from `~4.0.0` to `~4.2.1`
-
 - Update `eslint-plugin-node` from `~7.0.1` to `~9.1.0`
 
 ### New rules
@@ -504,7 +549,7 @@ _(Estimated % of affected standard users, based on test suite in parens)_
 
 ### Changed rules
 
-- Relax rule: Allow template literal strings (backtick strings) to avoid escaping  [#421](https://github.com/standard/standard/issues/421)
+- Relax rule: Allow template literal strings (backtick strings) to avoid escaping [#421](https://github.com/standard/standard/issues/421)
 - Relax rule: Do not enforce spacing around \* in generator functions ([#564 (comment)](https://github.com/standard/standard/issues/564#issuecomment-234699126))
   - This is a temporary workaround for `babel` users who use async generator functions.
 
@@ -609,7 +654,7 @@ The goal of this release is to make `standard` faster to install, and simpler t
 _The percentage (%) of users that rule changes will effect, based on real-world testing of the top ~400 npm packages is denoted in brackets._
 
 - Disallow `__dirname`/`__filename` string concatenation ([#403](https://github.com/standard/standard/issues/403)) ([no-path-concat](https://eslint.org/docs/2.0.0/rules/no-path-concat)) [5%]
-- Require parens in arrow function arguments  ([#309](https://github.com/standard/standard/issues/309)) ([arrow-parens](https://eslint.org/docs/2.0.0/rules/arrow-parens.html)) [5%]
+- Require parens in arrow function arguments ([#309](https://github.com/standard/standard/issues/309)) ([arrow-parens](https://eslint.org/docs/2.0.0/rules/arrow-parens.html)) [5%]
 - Ensure that `new Promise()` is instantiated with the parameter names
   `resolve`, `reject` ([#282](https://github.com/standard/standard/issues/282)) ([promise/param-names](https://github.com/xjamundx/eslint-plugin-promise#param-names)) [1%]
 - Enforce Usage of Spacing in Template Strings ([template-curly-spacing](https://eslint.org/docs/2.0.0/rules/template-curly-spacing)) [1%]
@@ -624,7 +669,7 @@ _The percentage (%) of users that rule changes will effect, based on real-world 
 
 ### Removed Rules
 
-- `parseInt()` radix rule because ES5 fixes this issue ([#384](https://github.com/standard/standard/issues/384))  ([radix](https://eslint.org/docs/2.0.0/rules/radix.html)) [0%]
+- `parseInt()` radix rule because ES5 fixes this issue ([#384](https://github.com/standard/standard/issues/384)) ([radix](https://eslint.org/docs/2.0.0/rules/radix.html)) [0%]
 
 ### Expose eslint configuration via command line options and `package.json`
 
@@ -871,6 +916,10 @@ In `package.json`, use the "standard" property:
 [view diff](https://github.com/standard/standard/compare/v3.9.0...v4.0.0)
 
 [unreleased]: https://github.com/standard/standard/compare/v14.3.3...HEAD
+
+[15.0.0]: https://github.com/standard/standard/compare/v14.3.4...v15.0.0
+
+[14.3.4]: https://github.com/standard/standard/compare/v14.3.3...v14.3.4
 
 [14.3.3]: https://github.com/standard/standard/compare/v14.3.2...v14.3.3
 
