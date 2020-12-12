@@ -15,9 +15,8 @@
 </p>
 
 <h5 align="center">
-  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.remote.io/?utm_source=standardjs.com&utm_medium=sponsorship&utm_campaign=feross&utm_term=standardjs" rel="nofollow"><img src="https://feross.org/images/supporters/remoteio.png" alt="Remote.io" height=35 valign="middle"></a>
+  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://speakeasy.co/?utm_source=standardjs.com&utm_medium=sponsorship&utm_campaign=standard"><img src="https://speakeasy.co/logo-text.png" alt="Speakeasy" height=50 valign="middle"></a>
 </h5>
-<br>
 
 <p align="center">
   <a href="/docs/README-en.md">English</a> •
@@ -601,7 +600,7 @@ function xargs-r() {
   # Versi portable dari "xargs -r". Tanda -r adalah ekstensi GNU yang
   # menghindari xargs untuk berjalan jika tidak ada berkas yang dimasukan.
   if IFS= read -r -d $'\n' path; then
-    { echo "$path"; cat; } | xargs $@
+    echo "$path" | cat - | xargs "$@"
   fi
 }
 git diff --name-only --cached --relative | grep '\.jsx\?$' | sed 's/[^[:alnum:]]/\\&/g' | xargs-r -E '' -t standard
