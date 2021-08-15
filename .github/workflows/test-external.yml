@@ -1,4 +1,4 @@
-name: Test
+name: Test External
 
 on:
   push:
@@ -7,12 +7,12 @@ on:
     branches: [master]
 
 jobs:
-  test:
+  test-external:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [10.x, 12.x, 14.x, 16.x]
       fail-fast: false
 
     steps:
@@ -35,5 +35,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
-        run: npm test
+      - name: Run external tests
+        run: npm run test-external
