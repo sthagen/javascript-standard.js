@@ -125,7 +125,8 @@
     "name": "simple-get",
     "repo": "https://github.com/feross/simple-get",
     "description": "Simplest way to make http get requests. Supports HTTPS, redirects, gzip/deflate, streams in < 100 lines.",
-    "dependents": 33
+    "dependents": 33,
+    "disable": true
   },
   {
     "name": "is-generator",
@@ -217,7 +218,8 @@
     "name": "webtorrent",
     "repo": "https://github.com/webtorrent/webtorrent",
     "description": "Streaming torrent client",
-    "dependents": 17
+    "dependents": 17,
+    "disable": true
   },
   {
     "name": "html-pdf",
@@ -226,7 +228,8 @@
     "dependents": 17,
     "args": [
       "bin/index.js"
-    ]
+    ],
+    "disable": true
   },
   {
     "name": "run-waterfall",
@@ -411,7 +414,8 @@
     "name": "chrome-net",
     "repo": "https://github.com/feross/chrome-net",
     "description": "Use the Node `net` API in Chrome Apps",
-    "dependents": 7
+    "dependents": 7,
+    "disable": true
   },
   {
     "name": "subcommand",
@@ -612,12 +616,6 @@
     "dependents": 5
   },
   {
-    "name": "libp2p-tcp",
-    "repo": "https://github.com/libp2p/js-libp2p-tcp",
-    "description": "Node.js implementation of the TCP module that libp2p uses, which implements the abstract-connection interface",
-    "dependents": 5
-  },
-  {
     "name": "merkledag-store",
     "repo": "https://github.com/daviddias/js-merkledag-store",
     "description": "JavaScript Implementation of the MerkleDAG Store",
@@ -652,7 +650,8 @@
     "repo": "https://github.com/feross/simple-websocket",
     "description": "Simple, EventEmitter API for WebSockets (browser)",
     "dependents": 4,
-    "install": true
+    "install": true,
+    "disable": true
   },
   {
     "name": "is-installed",
@@ -1031,7 +1030,8 @@
   },
   {
     "name": "studynotes.org",
-    "repo": "https://github.com/feross/studynotes.org"
+    "repo": "https://github.com/feross/studynotes.org",
+    "disable": true
   },
   {
     "name": "webtorrent.io",
@@ -1257,7 +1257,8 @@
     "name": "safe-buffer",
     "repo": "https://github.com/feross/safe-buffer",
     "description": "Safer Node.js Buffer API",
-    "dependents": 897
+    "dependents": 897,
+    "disable": true
   },
   {
     "name": "levelup",
@@ -1358,7 +1359,8 @@
     "name": "yargs-parser",
     "repo": "https://github.com/yargs/yargs-parser",
     "description": "the mighty option parser used by yargs",
-    "dependents": 591
+    "dependents": 591,
+    "disable": true
   },
   {
     "name": "mathjs",
@@ -1391,7 +1393,8 @@
     "name": "leveldown",
     "repo": "https://github.com/Level/leveldown",
     "description": "A low-level Node.js LevelDB binding",
-    "dependents": 534
+    "dependents": 534,
+    "disable": true
   },
   {
     "name": "memdown",
@@ -1442,7 +1445,8 @@
     "name": "extract-zip",
     "repo": "https://github.com/maxogden/extract-zip",
     "description": "unzip a zip file into a directory using 100% javascript",
-    "dependents": 467
+    "dependents": 467,
+    "disable": true
   },
   {
     "name": "assets-webpack-plugin",
